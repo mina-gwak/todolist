@@ -118,6 +118,7 @@ function deleteTask(e) {
 function showTask(item, list, newTask, date, id) {
   const li = document.createElement('li');
   const span = document.createElement('span');
+  const btnDiv = document.createElement('div');
   const delBtn = document.createElement('button');
   const listBtn = document.createElement('button');
   const currentDate = document.querySelector('.date').innerHTML;
@@ -125,13 +126,15 @@ function showTask(item, list, newTask, date, id) {
   delBtn.classList.add('delBtn');
   delBtn.addEventListener('click', deleteTask);
   li.appendChild(span);
-  li.appendChild(delBtn);
+  btnDiv.classList.add('btnDiv');
+  btnDiv.appendChild(delBtn);
   if (list === 'pending') {
     if (currentDate === date) {
       listBtn.classList.add('toFinishedBtn');
       listBtn.addEventListener('click', moveToFinished);
+      btnDiv.appendChild(listBtn);
       li.id = id;
-      li.appendChild(listBtn);
+      li.appendChild(btnDiv);
       pendingUl.appendChild(li);
     }
     if (newTask) {
@@ -147,8 +150,9 @@ function showTask(item, list, newTask, date, id) {
     if (currentDate === date) {
       listBtn.classList.add('toPendingBtn');
       listBtn.addEventListener('click', moveToPending);
+      btnDiv.appendChild(listBtn);
       li.id = id;
-      li.appendChild(listBtn);
+      li.appendChild(btnDiv);
       finishedUl.appendChild(li);
     }
     if (newTask) {
