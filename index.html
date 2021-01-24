@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/font/font.css" />
+    <link rel="stylesheet" href="./src/styles.css" />
+    <title>TodoList</title>
+  </head>
+  <body>
+    <section class="main-div">
+      <button class="close-todo-btn">CLOSE</button>
+      <button class="go-today">TODAY</button>
+      <div class="date-div">
+        <button class="previous date-btn"></button>
+        <p class="date"></p>
+        <button class="next date-btn"></button>
+      </div>
+      <h1 class="clock"></h1>
+      <form class="name-form">
+        <input type="text" placeholder="What is your name?" />
+      </form>
+      <h2 class="greeting"></h2>
+      <button class="show-todo-btn">SHOW TODO</button>
+      <p class="weather"></p>
+    </section>
+    <section class="todo-div">
+      <div class="todo-contents">
+        <div class="title-div">
+          <h1 class="todo-title"><span></span>'s TODOLIST</h1>
+          <button class="setting"></button>
+          <ul class="setting-menu">
+            <li class="reset">RESET DATA</li>
+          </ul>
+        </div>
+        <div class="lists">
+          <div class="list-div">
+            <div class="list-title">
+              <h3>PENDING LIST</h3>
+              <button class="add-item-btn"></button>
+            </div>
+            <div class="list-contents pending">
+              <ul class="pending-ul"></ul>
+            </div>
+          </div>
+          <div class="list-div">
+            <div class="list-title">
+              <h3>FINISHED LIST</h3>
+            </div>
+            <div class="list-contents finished">
+              <ul class="finished-ul"></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="./src/setting.js"></script>
+    <script src="./src/greeting.js"></script>
+    <script src="./src/weather.js"></script>
+    <script src="./src/bgImage.js"></script>
+    <script src="./src/clock.js"></script>
+    <script src="./src/handleTodoWindow.js"></script>
+    <script src="./src/todoList.js"></script>
+  </body>
+</html>

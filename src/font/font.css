@@ -1,0 +1,39 @@
+@font-face {
+  font-family: 'applesdgothicneob00regular';
+  src: url('applesdgothicneob-webfont.woff2') format('woff2'),
+       url('applesdgothicneob-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'applesdgothicneoeb00regular';
+  src: url('applesdgothicneoeb-webfont.woff2') format('woff2'),
+       url('applesdgothicneoeb-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'applesdgothicneol00regular';
+  src: url('applesdgothicneol-webfont.woff2') format('woff2'),
+       url('applesdgothicneol-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'applesdgothicneom00regular';
+  src: url('applesdgothicneom-webfont.woff2') format('woff2'),
+       url('applesdgothicneom-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'applesdgothicneoh00regular';
+  src: url('applesdgothicneoh-webfont.woff2') format('woff2'),
+       url('applesdgothicneoh-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}

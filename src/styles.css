@@ -1,0 +1,595 @@
+/* Reset */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  font-family: 'applesdgothicneom00regular';
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+  width: 100vw;
+  height: 100vh;
+  box-sizing: border-box;
+  line-height: 1;
+  overflow: hidden;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+button {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  font-family: 'applesdgothicneom00regular';
+}
+
+input:focus,
+input:active,
+button:focus,
+button:active {
+  outline: none;
+  box-shadow: none;
+}
+
+h1 {
+  font-family: 'applesdgothicneoeb00regular';
+  margin: 0;
+}
+
+/* Body */
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Main Div */
+
+.main-div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  visibility: hidden;
+  animation: fadeIn 1s linear;
+}
+
+.main-div.show {
+  animation: fadeIn 0.5s linear;
+  visibility: visible;
+}
+
+.main-div.decrease {
+  width: 30%;
+}
+
+.main-div.increase {
+  width: 100%;
+  transition: all 1s linear;
+}
+
+.go-today {
+  display: none;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.8);
+  letter-spacing: 2px;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  padding: 5px 10px;
+  margin-bottom: 15px;
+  transition: all 500ms;
+  cursor: pointer;
+}
+
+.go-today.show {
+  display: block;
+}
+
+.go-today:hover {
+  background-color: rgba(255, 255, 255);
+  color: rgba(0, 0, 0);
+}
+
+p.date,
+h1.clock {
+  font-family: 'applesdgothicneoeb00regular';
+}
+
+.date-div {
+  display: flex;
+  flex-wrap: nowrap;
+  width: fit-content;
+  z-index: 2;
+  margin-bottom: 10px;
+}
+
+.date {
+  position: relative;
+  display: inline-block;
+  font-size: 30px;
+  margin: 0 20px;
+}
+
+.date-btn {
+  display: none;
+  width: 30px;
+  height: 100%;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  padding: 0;
+}
+
+.date-btn.show {
+  display: inline-block;
+}
+
+.date-btn.previous {
+  background-image: url('https://user-images.githubusercontent.com/62706988/105579766-e2d0a180-5dcb-11eb-9d46-0585b7a29b4e.png');
+}
+
+.date-btn.next {
+  background-image: url('https://user-images.githubusercontent.com/62706988/105579765-e2380b00-5dcb-11eb-85c5-f5fa99703f5b.png');
+}
+
+.clock {
+  font-size: 120px;
+  letter-spacing: 5px;
+  margin-bottom: 30px;
+}
+
+.clock.resize {
+  font-size: 70px;
+}
+
+.name-form,
+.greeting {
+  display: none;
+}
+
+.name-form.show,
+.greeting.show,
+.show-todo-btn.show {
+  display: block;
+}
+
+.name-form input,
+.name-form input::placeholder {
+  font-family: 'applesdgothicneoeb00regular';
+  font-size: 40px;
+  color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+}
+
+.name-form input {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+  padding: 5px;
+}
+
+.greeting {
+  font-family: 'applesdgothicneoeb00regular';
+  font-size: 40px;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 30px;
+}
+
+.show-todo-btn {
+  display: none;
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.8);
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  padding: 5px 10px;
+  transition: all 500ms;
+  cursor: pointer;
+}
+
+.show-todo-btn:hover {
+  background-color: rgba(255, 255, 255);
+  color: rgba(0, 0, 0);
+}
+
+.close-todo-btn {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  display: none;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.8);
+  letter-spacing: 2px;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  padding: 5px 10px;
+  transition: all 500ms;
+  cursor: pointer;
+}
+
+.close-todo-btn:hover {
+  background-color: rgba(255, 255, 255);
+  color: rgba(0, 0, 0);
+}
+
+.close-todo-btn.show {
+  display: block;
+}
+
+.weather {
+  position: absolute;
+  bottom: 30px;
+}
+
+/* Background Image */
+
+.bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1000;
+  animation: fadeIn 0.5s linear;
+}
+
+.bg-dark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: inherit;
+  height: inherit;
+  z-index: -999;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.bg-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: inherit;
+  height: inherit;
+  z-index: -1000;
+}
+
+/* Todo */
+
+.todo-div {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0%;
+  height: inherit;
+  background-color: #F4F4F4;
+  transition: all 1s linear;
+}
+
+.todo-div.increase {
+  width: 70%;
+  transition: all 1s linear;
+}
+
+.todo-div.decrease {
+  width: 0%;
+}
+
+.todo-contents {
+  display: none;
+  width: 80%;
+  height: 90%;
+  padding: 5% 10%;
+  color: #333333;
+}
+
+.todo-contents.show {
+  display: block;
+}
+
+.title-div {
+  position: relative;
+}
+
+h1.todo-title {
+  font-size: 50px;
+  margin-bottom: 15vh;
+}
+
+.todo-title span {
+  font-family: 'applesdgothicneoeb00regular';
+}
+
+.setting {
+  position: absolute;
+  top: 5px;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  background-image: url('https://user-images.githubusercontent.com/62706988/105632692-e7628c00-5e97-11eb-8bd6-23175c4a4b11.png');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  font-size: 40px;
+  color: #fff;
+  transition: all ease-in-out 500ms;
+}
+
+.setting.active {
+  transform: rotate(120deg);
+  transition: all 500ms linear;
+}
+
+.setting-menu {
+  position: absolute;
+  top: 110%;
+  right: 10px;
+  width: 110px;
+  visibility: hidden;
+  opacity: 0;
+  transition: all linear 500ms;
+}
+
+.setting-menu.active {
+  top: 120%;
+  visibility: visible;
+  opacity: 1;
+  height: fit-content;
+}
+
+.setting-menu li {
+  text-align: center;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  background-color: #fff;
+  padding: 10%;
+  cursor: pointer;
+}
+
+.setting-menu li:hover {
+  transform: scale(1.05);
+}
+
+.lists {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.list-div {
+  width: 25vw;
+  height: 60vh;
+  border-radius: 15px;
+  background-color: #fff;
+  box-shadow: 3px 3px 8px 0 rgba(0, 0, 0, 0.3);
+}
+
+.list-title {
+  position: relative;
+}
+
+.list-title h3 {
+  font-family: 'applesdgothicneoeb00regular';
+  color: #fff;
+  font-size: 25px;
+  letter-spacing: 3px;
+  text-align: center;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  padding: 5%;
+}
+
+.list-title h3.color-1 {
+  background-color: #AF774E;
+}
+
+.list-title h3.color-2 {
+  background-color: #5F744A;
+}
+
+.list-title h3.color-3 {
+  background-color: #625C51;
+}
+
+.list-title h3.color-4 {
+  background-color: #49475A;
+}
+
+.list-title h3.color-5 {
+  background-color: #D8B148;
+}
+
+.list-title h3.color-6 {
+  background-color: #8388C3;
+}
+
+.list-title h3.color-7 {
+  background-color: #475A56;
+}
+
+.list-title h3.color-8 {
+  background-color: #A5A29D;
+}
+
+.list-title h3.color-9 {
+  background-color: #97B6BA;
+}
+
+.list-contents {
+  width: 90%;
+  height: 80%;
+  margin: 5% auto;
+}
+
+.list-contents ul {
+  overflow: scroll;
+  height: 100%;
+}
+
+.add-item-btn {
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  background-image: url('https://user-images.githubusercontent.com/62706988/105605868-d2272800-5dd9-11eb-9ca5-ec02835901ce.png');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  font-size: 40px;
+  color: #fff;
+}
+
+.add-todo {
+  display: block;
+  font-family: 'applesdgothicneom00regular';
+  width: 90%;
+  color: #333333;
+  font-size: 20px;
+  border: none;
+  border-bottom: 1px solid #CCCCCC;
+  padding: 10px 5px;
+  margin: 0 auto;
+}
+
+.add-todo::placeholder {
+  font-size: 20px;
+}
+
+.list-contents li {
+  display: block;
+  font-family: 'applesdgothicneom00regular';
+  width: 90%;
+  color: #333333;
+  font-size: 20px;
+  border: none;
+  border-bottom: 1px solid #CCCCCC;
+  padding: 15px 5px;
+  margin: 0 auto 5px;
+}
+
+.list-contents li span {
+  display: inline-block;
+  width: 75%;
+  color: #333333;
+}
+
+.delBtn {
+  width: 20px;
+  height: 20px;
+  background-image: url('https://user-images.githubusercontent.com/62706988/105606788-a6f30780-5dde-11eb-811a-e2ea82762467.png');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  margin-right: 15px;
+  transition: all 300ms;
+}
+
+.delBtn:hover {
+  background-image: url('https://user-images.githubusercontent.com/62706988/105606787-a5c1da80-5dde-11eb-919c-984ea24f5d5a.png');
+  transition: all 300ms;
+}
+
+.toFinishedBtn {
+  width: 20px;
+  height: 20px;
+  background-image: url('https://user-images.githubusercontent.com/62706988/105606791-a78b9e00-5dde-11eb-876b-b2f5f7a7dce0.png');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  transition: all 300ms;
+}
+
+.toFinishedBtn:hover {
+  background-image: url('https://user-images.githubusercontent.com/62706988/105606792-a8bccb00-5dde-11eb-8ff4-014530662813.png');
+  transition: all 300ms;
+}
+
+.toFinishedBtn:active {
+  background-image: url('https://user-images.githubusercontent.com/62706988/105606795-a9556180-5dde-11eb-8d49-f398c73ea888.png');
+  transition: all 300ms;
+}
+
+.toPendingBtn {
+  width: 20px;
+  height: 20px;
+  background-image: url('https://user-images.githubusercontent.com/62706988/105606795-a9556180-5dde-11eb-8d49-f398c73ea888.png');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  transition: all 300ms;
+}
+
+.toPendingBtn:hover {
+  background-image: url('https://user-images.githubusercontent.com/62706988/105606789-a6f30780-5dde-11eb-8ee7-6abd9fe70229.png');
+  transition: all 300ms;
+}
+
+.toPendingBtn:active {
+  background-image: url('https://user-images.githubusercontent.com/62706988/105606791-a78b9e00-5dde-11eb-876b-b2f5f7a7dce0.png');
+  transition: all 300ms;
+}
+
+/* Animation */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  /* Where all the magic happens... */
+}
