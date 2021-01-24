@@ -452,7 +452,7 @@ h1.todo-title {
 .list-contents {
   width: 90%;
   height: 80%;
-  margin: 8% auto;
+  margin: 6% auto;
 }
 
 .list-contents ul {
@@ -523,7 +523,7 @@ h1.todo-title {
 
 .btnDiv {
   position: relative;
-  top: -2px;
+  top: -1px;
   display: inline-block;
   min-width: fit-content;
 }
@@ -608,7 +608,7 @@ h1.todo-title {
   }
 }
 
-@media (max-width: 1023px) {
+@media (max-width: 1099px) {
   .clock.resize {
     font-size: 50px;
   }
@@ -673,6 +673,8 @@ h1.todo-title {
     font-size: 100px;
   }
 }
+ 
+/* 후에 UI 수정 예정 - 상하 배치로 */
  
 /* @media (max-width: 767px) {
   

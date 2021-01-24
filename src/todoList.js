@@ -84,7 +84,7 @@ function moveToFinished(e) {
   e.target.addEventListener('click', moveToPending);
   e.target.classList.remove('toFinishedBtn');
   e.target.classList.add('toPendingBtn');
-  const li = e.currentTarget.parentNode;
+  const li = e.currentTarget.parentNode.parentNode;
   pendingUl.removeChild(li);
   finishedUl.appendChild(li);
   pendings.forEach(function(item) {
@@ -98,7 +98,7 @@ function moveToFinished(e) {
 }
 
 function deleteTask(e) {
-  const li = e.currentTarget.parentNode;
+  const li = e.currentTarget.parentNode.parentNode;
   if (li.parentNode.classList.contains('pending-ul')) {
     pendingUl.removeChild(li);
     pendings = pendings.filter(function(item) {
