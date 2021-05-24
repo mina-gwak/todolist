@@ -66,7 +66,8 @@ function moveToPending(e) {
   e.target.addEventListener('click', moveToFinished);
   e.target.classList.remove('toPendingBtn');
   e.target.classList.add('toFinishedBtn');
-  const li = e.currentTarget.parentNode;
+  const li = e.currentTarget.parentNode.parentNode;
+  console.log(li);
   finishedUl.removeChild(li);
   pendingUl.appendChild(li);
   finished.forEach(function(item) {

@@ -654,6 +654,10 @@ h1.todo-title {
     font-size: 16px;
   }
 
+  .add-todo {
+    font-size: 16px;
+  }
+
   .delBtn {
     width: 16px;
     height: 16px;
